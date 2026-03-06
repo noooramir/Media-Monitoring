@@ -1,0 +1,44 @@
+.video-section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #B30000;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #B30000;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    #B30000 0%, 
+    #550000 50%, 
+    transparent 100%);
+  box-shadow: 0 0 5px #B30000;
+}
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .video-list {
+    gap: 12px;
+  }
+}

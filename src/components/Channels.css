@@ -1,0 +1,122 @@
+.channels-container {
+  background-color: #0a0a0a;
+  border: 1px solid #550000;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+}
+
+.channels-header {
+  margin-bottom: 20px;
+}
+
+.channels-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #B30000;
+  letter-spacing: 3px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #B30000;
+}
+
+.channels-divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    #B30000 0%, 
+    #550000 50%, 
+    transparent 100%);
+  box-shadow: 0 0 5px #B30000;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.channel-item {
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.channel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #550000;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+}
+
+.channel-image-wrapper:hover {
+  border-color: #B30000;
+  box-shadow: 
+    0 0 15px rgba(179, 0, 0, 0.6),
+    0 0 25px rgba(179, 0, 0, 0.4),
+    inset 0 0 20px rgba(179, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.channel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.channel-image-wrapper:hover .channel-image {
+  transform: scale(1.1);
+}
+
+.channel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 10px;
+}
+
+.channel-image-wrapper:hover .channel-overlay {
+  opacity: 1;
+}
+
+.channel-name {
+  color: #B30000;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 5px #B30000;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .channels-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .channels-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .channels-title {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}

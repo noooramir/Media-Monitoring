@@ -1,0 +1,148 @@
+.video-card {
+  display: flex;
+  gap: 15px;
+  background-color: #0a0a0a;
+  border: 1px solid #550000;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 0, 0, 0.2);
+}
+
+.video-card:hover {
+  border-color: #B30000;
+  box-shadow: 
+    0 0 15px rgba(179, 0, 0, 0.5),
+    0 0 25px rgba(179, 0, 0, 0.3),
+    inset 0 0 20px rgba(179, 0, 0, 0.1);
+  transform: translateY(-2px);
+  background-color: #111111;
+}
+
+.video-thumbnail {
+  position: relative;
+  flex-shrink: 0;
+  width: 240px;
+  height: 135px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #550000;
+  transition: border-color 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail {
+  border-color: #B30000;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  color: #B30000;
+  font-size: 48px;
+  text-shadow: 0 0 10px #B30000;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.video-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.video-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #E0E0E0;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.video-card:hover .video-title {
+  color: #B30000;
+  text-shadow: 0 0 5px rgba(179, 0, 0, 0.5);
+}
+
+.video-channel {
+  font-size: 14px;
+  color: #999999;
+  margin: 0 0 5px 0;
+  font-weight: 400;
+}
+
+.video-time {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .video-thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+
+  .video-channel {
+    font-size: 12px;
+  }
+
+  .video-time {
+    font-size: 11px;
+  }
+}
