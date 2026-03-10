@@ -1,55 +1,170 @@
+/* App.css */
+:root {
+  --bg-black: #050505;
+  --card-bg: #111111;
+  --border-color: #222222;
+  --text-main: #e0e0e0;
+  --text-dim: #888888;
+  --accent-pink: #d63384;
+  --accent-teal: #20c997;
+  --accent-yellow: #ffc107;
+}
+
 .App {
-  min-height: 100vh;
-  background-color: #000000;
-  color: #E0E0E0;
-}
-
-.main-container {
-  display: flex;
-  gap: 20px;
+  background-color: var(--bg-black);
+  color: var(--text-main);
   padding: 20px;
-  max-width: 1920px;
-  margin: 0 auto;
+  min-height: 100vh;
 }
 
-.left-content {
-  flex: 0 0 70%;
+/* Header & Filters */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-select {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Stats Styling */
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stat-subtext {
+  font-size: 0.8rem;
+  color: var(--accent-pink);
+  margin-left: 10px;
+}
+
+/* Sentiment Ring (CSS Placeholder) */
+.sentiment-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ring-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 8px solid var(--accent-pink);
+  border-right-color: var(--accent-teal);
+  border-top-color: var(--accent-teal);
+  border-bottom-color: #333;
+  border-radius: 50%;
+}
+
+/* Recent Mentions List */
+.mentions-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
-.right-sidebar {
-  flex: 0 0 calc(30% - 20px);
-  position: sticky;
-  top: 20px;
-  height: fit-content;
+.mention-item {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  border-left: 3px solid #333;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .main-container {
-    flex-direction: column;
-  }
-
-  .left-content {
-    flex: 1;
-  }
-
-  .right-sidebar {
-    flex: 1;
-    position: relative;
-    top: 0;
-  }
+/* Feed Styling (Middle Column) */
+.feed-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-@media (max-width: 768px) {
-  .main-container {
-    padding: 10px;
-    gap: 15px;
-  }
+.feed-thumb {
+  width: 120px;
+  height: 70px;
+  border-radius: 4px;
+  object-fit: cover;
+}
 
-  .left-content {
-    gap: 20px;
-  }
+.feed-info h4 {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.feed-info span {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+/* Platform Tabs */
+.platform-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.tab-active { color: #ff4444; border-bottom: 2px solid #ff4444; }
+
+/* Status Pills */
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.status-active { background: #ff444422; color: #ff4444; }
+.status-inactive { background: #00ff0022; color: #00ff00; }
+
+/* Keyword Chips */
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword-chip {
+  background: #222;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
+/* index.css */
 body {
   margin: 0;
-  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* Change 'Orbitron' to Helvetica */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000;
